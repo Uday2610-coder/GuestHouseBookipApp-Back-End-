@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "s7zowKNpDZFbY41oa8GU26VCeM7G2HyDjG/tEjJgTxM=",
+  "Source": "GuestHouseBookingApplication",
+  "BasePath": "_content/GuestHouseBookingApplication",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
