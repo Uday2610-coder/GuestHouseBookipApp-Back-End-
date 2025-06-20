@@ -1,0 +1,72 @@
+
+<div class="booking-main-wrap">
+  <div class="booking-card">
+    <h2 class="title">Guest House Booking</h2>
+    <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" class="booking-form">
+      <div class="booking-form-grid">
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Check-in Date</mat-label>
+          <input matInput [matDatepicker]="checkinPicker" formControlName="checkIn" />
+          <mat-datepicker-toggle matSuffix [for]="checkinPicker"></mat-datepicker-toggle>
+          <mat-datepicker #checkinPicker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Check-out Date</mat-label>
+          <input matInput [matDatepicker]="checkoutPicker" formControlName="checkOut" />
+          <mat-datepicker-toggle matSuffix [for]="checkoutPicker"></mat-datepicker-toggle>
+          <mat-datepicker #checkoutPicker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Guest House</mat-label>
+          <mat-select formControlName="guestHouse" (selectionChange)="onGuestHouseChange($event)">
+            <mat-option *ngFor="let gh of guestHouses" [value]="gh.id">{{ gh.name }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Location</mat-label>
+          <input matInput formControlName="location" readonly />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Room No</mat-label>
+          <mat-select formControlName="roomNo" (selectionChange)="onRoomChange($event)">
+            <mat-option *ngFor="let room of rooms" [value]="room.id">{{ room.name }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Bed No</mat-label>
+          <mat-select formControlName="bedNo">
+            <mat-option *ngFor="let bed of beds" [value]="bed.id">{{ bed.bedNumber }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Gender</mat-label>
+          <mat-select formControlName="gender">
+            <mat-option *ngFor="let g of genders" [value]="g">{{ g }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline" class="form-field full-width">
+        <mat-label>Enter Purpose...</mat-label>
+        <textarea matInput rows="3" formControlName="purpose"></textarea>
+      </mat-form-field>
+      <div class="booking-checkbox-row">
+        <mat-checkbox formControlName="acceptTerms" required>
+          I accept the terms and conditions
+        </mat-checkbox>
+      </div>
+      <div class="booking-actions">
+        <button mat-stroked-button type="button" class="cancel" (click)="onCancel()">Cancel</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="bookingForm.invalid">
+          Book
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

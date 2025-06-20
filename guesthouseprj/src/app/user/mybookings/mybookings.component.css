@@ -1,0 +1,182 @@
+body {
+  background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+}
+
+.mybookings-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 40px 28px 32px 28px;
+  background: rgba(255,255,255,0.98);
+  border-radius: 22px;
+  box-shadow: 0 18px 48px rgba(123, 47, 242, 0.13), 0 2px 8px rgba(123, 47, 242, 0.07);
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+}
+
+/* Gradient, bold title */
+.title {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 900;
+  margin-bottom: 38px;
+  letter-spacing: 0.04em;
+  background: linear-gradient(90deg, #7b2ff2, #f357a8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  user-select: none;
+}
+
+/* Filter bar */
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.mat-form-field {
+  flex: 1 1 210px;
+  min-width: 210px;
+}
+
+/* Material fields with card-style */
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  border-radius: 12px;
+  border-color: #b993d6;
+  transition: border-color 0.27s;
+}
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline {
+  border-color: #7b2ff2;
+  box-shadow: 0 0 10px rgba(123, 47, 242, 0.18);
+}
+
+.mat-input-element, .mat-select-value {
+  font-size: 1.09rem;
+  padding: 12px 15px;
+  border-radius: 10px;
+  background: #f4f5fa;
+  transition: background-color 0.23s;
+  font-weight: 500;
+}
+
+.mat-input-element:focus {
+  background: #e7e4fa;
+}
+
+/* Carded table effect */
+table.mat-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 18px;
+  font-size: 15px;
+  color: #444;
+  background: transparent;
+  margin-top: 18px;
+}
+
+tr.mat-header-row,
+tr.mat-row {
+  background: none;
+}
+
+/* Card effect for each row */
+tr.mat-row {
+  border-radius: 13px;
+  box-shadow: 0 4px 20px rgba(123, 47, 242, 0.08);
+  background: rgba(246, 244, 252, 0.97);
+  transition: box-shadow 0.2s, background 0.2s;
+}
+
+tr.mat-row:hover td.mat-cell {
+  background: #e0c3fc;
+  box-shadow: 0 6px 32px rgba(123, 47, 242, 0.13);
+  cursor: pointer;
+}
+
+th.mat-header-cell {
+  font-weight: 900;
+  font-size: 16px;
+  padding: 15px 19px;
+  background: #ede7fa;
+  color: #7b2ff2;
+  border-radius: 12px 12px 0 0;
+  user-select: none;
+  border-bottom: 2px solid #e0c3fc;
+}
+
+td.mat-cell {
+  background: transparent;
+  padding: 15px 19px;
+  border-bottom: none;
+  vertical-align: middle;
+  border-radius: 0 0 12px 12px;
+  font-size: 1.01rem;
+  font-weight: 500;
+}
+
+td.mat-cell:last-child,
+th.mat-header-cell:last-child {
+  text-align: center;
+}
+
+/* Stylish action button */
+.mat-button {
+  font-weight: 700;
+  text-transform: none;
+  min-width: 70px;
+  padding: 7px 14px;
+  border-radius: 7px;
+  background: none;
+  color: #f357a8;
+  border: 1.6px solid #f357a8;
+  box-shadow: none;
+  font-size: 1.05rem;
+  margin-left: 0;
+  transition: background 0.19s, color 0.19s, border 0.18s;
+}
+
+.mat-button:hover {
+  background: linear-gradient(90deg, #f357a8 0%, #7b2ff2 100%);
+  color: #fff !important;
+  border-color: #7b2ff2;
+  box-shadow: 0 2px 10px rgba(123, 47, 242, 0.11);
+}
+
+/* Danger button color */
+.mat-button[color="warn"] {
+  background: none;
+  color: #e53935;
+  border: 1.6px solid #e53935;
+}
+
+.mat-button[color="warn"]:hover {
+  background: #e53935;
+  color: #fff !important;
+  border-color: #e53935;
+}
+
+/* Responsive improvements */
+@media (max-width: 950px) {
+  .mybookings-container {
+    padding: 18px 1vw 14px 1vw;
+  }
+  .filter-row {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .mat-form-field {
+    width: 100%;
+    min-width: unset;
+  }
+  th.mat-header-cell,
+  td.mat-cell {
+    font-size: 13px;
+    padding: 12px 9px;
+  }
+  table.mat-table {
+    border-spacing: 0 10px;
+  }
+}
