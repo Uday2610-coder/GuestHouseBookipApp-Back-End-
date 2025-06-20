@@ -1,9 +1,0 @@
-<div class="app-container" [class.with-nav]="showNavigation">
-  <nav *ngIf="showNavigation" class="side-nav">
-    <app-admin-nav *ngIf="isAdminSection"></app-admin-nav>
-    <app-user-nav *ngIf="!isAdminSection"></app-user-nav>
-  </nav>
-  <main [class.with-nav]="showNavigation">
-    <router-outlet></router-outlet>
-  </main>
-</div>
